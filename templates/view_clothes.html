@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Clothes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_view.css') }}">
+</head>
+<body>
+    <h2>All Clothes</h2>
+    <table border="1">
+        <tr>
+            <th>ID</th><th>Name</th><th>Brand</th><th>Size</th><th>Color</th><th>Price</th><th>Description</th>
+        </tr>
+        {% for cloth in clothes %}
+        <tr>
+            <td>{{ cloth[0] }}</td>
+            <td>{{ cloth[1] }}</td>
+            <td>{{ cloth[2] }}</td>
+            <td>{{ cloth[3] }}</td>
+            <td>{{ cloth[4] }}</td>
+            <td>{{ cloth[5] }}</td>
+            <td>{{ cloth[6] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <div style="margin-top: 10px;">
+        <a href="/add"><button>Add New Cloth</button></a>
+        <a href="/logout"><button>Logout</button></a>
+    </div>
+</body>
+</html>
